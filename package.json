@@ -1,5 +1,5 @@
 {
-  "name": "@react-native-community/blur",
+  "name": "react-native-deep-blur",
   "version": "4.3.0",
   "description": "React Native Blur component",
   "main": "lib/commonjs/index",
@@ -13,7 +13,7 @@
     "android",
     "ios",
     "cpp",
-    "react-native-blur.podspec",
+    "react-native-smooth-blur.podspec",
     "!lib/typescript/example",
     "!android/build",
     "!ios/build",
@@ -35,13 +35,13 @@
     "ios",
     "android"
   ],
-  "repository": "https://github.com/react-native-community/react-native-blur",
+  "repository": "https://github.com/solydhq/react-native-smooth-blur",
   "author": "Alexey Kureev <kureev-mail@ya.ru> (https://github.com/Kureev)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/react-native-community/react-native-blur/issues"
+    "url": "https://github.com/solydhq/react-native-smooth-blur/issues"
   },
-  "homepage": "https://github.com/react-native-community/react-native-blur",
+  "homepage": "https://github.com/solydhq/react-native-smooth-blur",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },

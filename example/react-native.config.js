@@ -23,7 +23,7 @@ const project = (() => {
 module.exports = {
   ...(project ? { project } : undefined),
   dependencies: {
-    '@react-native-community/blur': {
+    'react-native-smooth-blur': {
       root: path.join(__dirname, '..'),
     },
   },

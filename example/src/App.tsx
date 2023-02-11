@@ -12,14 +12,17 @@ import {
   View,
   SafeAreaView,
   Dimensions,
+  NativeSyntheticEvent,
 } from 'react-native';
-import SegmentedControl from '@react-native-community/segmented-control'; // Note: SegmentedControl does not yet support Fabric
+import SegmentedControl, {
+  NativeSegmentedControlIOSChangeEvent,
+} from '@react-native-segmented-control/segmented-control'; // Note: SegmentedControl does not yet support Fabric
 
 import {
   BlurView,
   VibrancyView,
   BlurViewProps,
-} from '@react-native-community/blur';
+} from 'react-native-smooth-blur';
 
 const blurTypeValues =
   Platform.OS === 'ios'
@@ -35,16 +38,21 @@ const Blurs = () => {
   const [vibrancyActiveSegment, setVibrancyActiveSegment] = useState(2);
 
   const onBlurChange = useCallback(
-    (e) => setBlurActiveSegment(e.nativeEvent.selectedSegmentIndex),
+    (e: NativeSyntheticEvent<NativeSegmentedControlIOSChangeEvent>) =>
+      setBlurActiveSegment(e.nativeEvent.selectedSegmentIndex),
     []
   );
-  const onBlurValueChange = useCallback((value) => setBlurBlurType(value), []);
+  const onBlurValueChange = useCallback(
+    (value: BlurViewProps['blurType']) => setBlurBlurType(value),
+    []
+  );
   const onVibrancyChange = useCallback(
-    (e) => setVibrancyActiveSegment(e.nativeEvent.selectedSegmentIndex),
+    (e: NativeSyntheticEvent<NativeSegmentedControlIOSChangeEvent>) =>
+      setVibrancyActiveSegment(e.nativeEvent.selectedSegmentIndex),
     []
   );
   const onVibrancyValueChange = useCallback(
-    (value) => setVibrancyBlurType(value),
+    (value: BlurViewProps['blurType']) => setVibrancyBlurType(value),
     []
   );
 
@@ -76,7 +84,7 @@ const Blurs = () => {
             onBlurChange(event);
           }}
           onValueChange={(value) => {
-            onBlurValueChange(value);
+            onBlurValueChange(value as BlurViewProps['blurType']);
           }}
           tintColor={tintColor}
         />
@@ -103,7 +111,7 @@ const Blurs = () => {
                 onVibrancyChange(event);
               }}
               onValueChange={(value) => {
-                onVibrancyValueChange(value);
+                onVibrancyValueChange(value as BlurViewProps['blurType']);
               }}
               tintColor="white"
             />

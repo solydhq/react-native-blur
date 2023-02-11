@@ -1,4 +1,4 @@
-# `@react-native-community/blur`
+# `react-native-smooth-blur`
 
 [![npm version](https://badge.fury.io/js/%40react-native-community%2Fblur.svg)](https://badge.fury.io/js/%40react-native-community%2Fblur)
 
@@ -11,16 +11,23 @@ A component for UIVisualEffectView's blur and vibrancy effect on iOS, and [BlurV
 
 ### Content
 
-- [Installation](#installation)
-- [Usage](#usage)
-- [VibrancyView](#vibrancyview)
-- [Example React Native app](#example-react-native-app)
-- [Questions?](#questions)
+- [`react-native-smooth-blur`](#react-native-communityblur)
+    - [Current Maintainers:](#current-maintainers)
+    - [Content](#content)
+    - [Installation](#installation)
+    - [Usage](#usage)
+      - [BlurView](#blurview)
+      - [blurType](#blurtype)
+      - [blurType (iOS 13 only)](#blurtype-ios-13-only)
+    - [VibrancyView](#vibrancyview)
+    - [Example React Native App](#example-react-native-app)
+      - [Run the app](#run-the-app)
+    - [Questions?](#questions)
 
 ### Installation
 
 ```
-yarn add @react-native-community/blur
+yarn add react-native-smooth-blur
 ```
 
 Install native dependencies (iOS only):
@@ -33,54 +40,54 @@ cd ios && pod install
 
 #### BlurView
 
-| Property | Possible Values | Default | Platform
-| ----------- | ----------- | ----------- | -----------
-| `blurType` | See blurType below | - | All
-| `blurAmount` | 0 - 100 (The maximum blurAmount on Android is 32, so higher values will be clamped to 32) | 10 | All
-| `reducedTransparencyFallbackColor` | Any color | - | iOS only
-| `blurRadius` | 0 - 25 | Matches iOS blurAmount | Android only
-| `downsampleFactor` | 0 - 25 | Matches iOS blurAmount | Android only
-| `overlayColor` | Any color | Default color based on iOS blurType | Android only
+| Property                           | Possible Values                                                                           | Default                             | Platform     |
+| ---------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------- | ------------ |
+| `blurType`                         | See blurType below                                                                        | -                                   | All          |
+| `blurAmount`                       | 0 - 100 (The maximum blurAmount on Android is 32, so higher values will be clamped to 32) | 10                                  | All          |
+| `reducedTransparencyFallbackColor` | Any color                                                                                 | -                                   | iOS only     |
+| `blurRadius`                       | 0 - 25                                                                                    | Matches iOS blurAmount              | Android only |
+| `downsampleFactor`                 | 0 - 25                                                                                    | Matches iOS blurAmount              | Android only |
+| `overlayColor`                     | Any color                                                                                 | Default color based on iOS blurType | Android only |
 
 #### blurType
 
-| Name | Description
-| ----------- | -----------
-| `xlight` | extra light blur type
-| `light` | light blur type
-| `dark` | dark blur type
-| `extraDark` | extra dark blur type (tvOS only)
-| `regular` | regular blur type (iOS 10+ and tvOS only)
-| `prominent` |  prominent blur type (iOS 10+ and tvOS only)
-| `transparent` |  transparent blur type (iOS 10+ and tvOS only)
+| Name          | Description                                   |
+| ------------- | --------------------------------------------- |
+| `xlight`      | extra light blur type                         |
+| `light`       | light blur type                               |
+| `dark`        | dark blur type                                |
+| `extraDark`   | extra dark blur type (tvOS only)              |
+| `regular`     | regular blur type (iOS 10+ and tvOS only)     |
+| `prominent`   | prominent blur type (iOS 10+ and tvOS only)   |
+| `transparent` | transparent blur type (iOS 10+ and tvOS only) |
 
 #### blurType (iOS 13 only)
 
-| Name | Description
-| ----------- | -----------
-| `chromeMaterial` | An adaptable blur effect that creates the appearance of the system chrome.
-| `material` | An adaptable blur effect that creates the appearance of a material with normal thickness.
-| `thickMaterial` | An adaptable blur effect that creates the appearance of a material that is thicker than normal.
-| `chromeMaterial` | An adaptable blur effect that creates the appearance of the system chrome.
-| `thinMaterial` | An adaptable blur effect that creates the appearance of an ultra-thin material.
-| `ultraThinMaterial` | An adaptable blur effect that creates the appearance of an ultra-thin material.
-| `chromeMaterialDark` | A blur effect that creates the appearance of an ultra-thin material and is always dark.
-| `materialDark` | A blur effect that creates the appearance of a thin material and is always dark.
-| `thickMaterialDark` | A blur effect that creates the appearance of a material with normal thickness and is always dark.
-| `thinMaterialDark` | A blur effect that creates the appearance of a material that is thicker than normal and is always dark.
-| `ultraThinMaterialDark` | A blur effect that creates the appearance of the system chrome and is always dark.
-| `chromeMaterialLight` | An adaptable blur effect that creates the appearance of the system chrome.
-| `materialLight` | An adaptable blur effect that creates the appearance of a material with normal thickness.
-| `thickMaterialLight` | An adaptable blur effect that creates the appearance of a material that is thicker than normal.
-| `thinMaterialLight` | An adaptable blur effect that creates the appearance of a thin material.
-| `ultraThinMaterialLight` | An adaptable blur effect that creates the appearance of an ultra-thin material.
+| Name                     | Description                                                                                             |
+| ------------------------ | ------------------------------------------------------------------------------------------------------- |
+| `chromeMaterial`         | An adaptable blur effect that creates the appearance of the system chrome.                              |
+| `material`               | An adaptable blur effect that creates the appearance of a material with normal thickness.               |
+| `thickMaterial`          | An adaptable blur effect that creates the appearance of a material that is thicker than normal.         |
+| `chromeMaterial`         | An adaptable blur effect that creates the appearance of the system chrome.                              |
+| `thinMaterial`           | An adaptable blur effect that creates the appearance of an ultra-thin material.                         |
+| `ultraThinMaterial`      | An adaptable blur effect that creates the appearance of an ultra-thin material.                         |
+| `chromeMaterialDark`     | A blur effect that creates the appearance of an ultra-thin material and is always dark.                 |
+| `materialDark`           | A blur effect that creates the appearance of a thin material and is always dark.                        |
+| `thickMaterialDark`      | A blur effect that creates the appearance of a material with normal thickness and is always dark.       |
+| `thinMaterialDark`       | A blur effect that creates the appearance of a material that is thicker than normal and is always dark. |
+| `ultraThinMaterialDark`  | A blur effect that creates the appearance of the system chrome and is always dark.                      |
+| `chromeMaterialLight`    | An adaptable blur effect that creates the appearance of the system chrome.                              |
+| `materialLight`          | An adaptable blur effect that creates the appearance of a material with normal thickness.               |
+| `thickMaterialLight`     | An adaptable blur effect that creates the appearance of a material that is thicker than normal.         |
+| `thinMaterialLight`      | An adaptable blur effect that creates the appearance of a thin material.                                |
+| `ultraThinMaterialLight` | An adaptable blur effect that creates the appearance of an ultra-thin material.                         |
 
 Complete usage example that works on iOS and Android:
 
 ```javascript
 import React, { Component } from "react";
 import { View, Image, Text, StyleSheet } from "react-native";
-import { BlurView } from "@react-native-community/blur";
+import { BlurView } from "react-native-smooth-blur";
 
 export default function Menu() {
   return (
@@ -131,7 +138,7 @@ The vibrancy effect lets the content underneath a blurred view show through more
 `VibrancyView is only supported on iOS. Also note that the VibrancyView must contain nested views`
 
 ```javascript
-import { VibrancyView } from "@react-native-community/blur";
+import { VibrancyView } from "react-native-smooth-blur";
 
 export default function Menu() {
   return (
@@ -152,7 +159,7 @@ You can run the apps by following these steps:
 Clone the repository
 
 ```
-git clone https://github.com/react-native-community/react-native-blur.git
+git clone https://github.com/solydhq/react-native-smooth-blur.git
 ```
 
 Install dependencies
@@ -169,4 +176,4 @@ yarn example android/ios
 
 ### Questions?
 
-Feel free to [create an issue](https://github.com/Kureev/react-native-blur/issues/new)
+Feel free to [create an issue](https://github.com/solydhq/react-native-smooth-blur/issues/new)
