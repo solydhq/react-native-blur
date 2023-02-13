@@ -1,17 +1,17 @@
 # `react-native-smooth-blur`
 
-[![npm version](https://badge.fury.io/js/%40react-native-community%2Fblur.svg)](https://badge.fury.io/js/%40react-native-community%2Fblur)
+[![npm version](https://badge.fury.io/js/react-native-smooth-blur.svg)](https://badge.fury.io/js/react-native-smooth-blur)
 
 A component for UIVisualEffectView's blur and vibrancy effect on iOS, and [BlurView](https://github.com/Dimezis/BlurView) on Android.<br>
 
 <img src='https://cloud.githubusercontent.com/assets/139536/25066337/3c9d44c0-224d-11e7-8ca6-028478bf4a7d.gif' />
 
 ### Current Maintainers:
-- [Thibault Malbranche](https://github.com/Titozzz) ([Twitter @titozzz](https://twitter.com/titozzz)) from [Brigad](https://www.brigad.co/en-gb/about-us)
+- [sapkra](https://github.com/sapkra) ([Twitter @sapkra](https://twitter.com/sapkra)) from solyd
 
 ### Content
 
-- [`react-native-smooth-blur`](#react-native-communityblur)
+- [`react-native-smooth-blur`](#react-native-smooth-blur)
     - [Current Maintainers:](#current-maintainers)
     - [Content](#content)
     - [Installation](#installation)
